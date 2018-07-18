@@ -13,8 +13,11 @@ exports.initBackendStub = function(app) {
     const info = data[id];
     const details = cache[id] || (cache[id] = generateDetails(info));
 
-    res.json({ ...info, ...details });
+    // Was res.json({ ...info, ...details });
+      res.json({ info, details });
 
     return {};
+    //   console.log('res', res);
+    //   return res;
   });
 };

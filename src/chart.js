@@ -21,7 +21,9 @@ export function createChart(container, data, isActive) {
   const borderColor = getColor(isActive);
   const backgroundColor = getColor(isActive, 0.5);
 
-  const chart = new Chart(ctx, {
+  // Variable chart was redundant
+
+  return new Chart(ctx, {
     type: 'line',
     data: {
       labels: data.map(getLabel),
@@ -44,6 +46,4 @@ export function createChart(container, data, isActive) {
         }
     }
   });
-
-  return chart;
 }
